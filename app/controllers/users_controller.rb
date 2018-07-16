@@ -15,8 +15,7 @@ before_action :ensure_correct_user, {only: [:edit, :update]}
     @user = User.new(name: params[:name],
                      email: params[:email],
                      image_name: "default_user.jpg",
-                     password: params[:password],
-                     avatar: params[:avatar])
+                     password: params[:password],)
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "ユーザー登録が完了しました"
